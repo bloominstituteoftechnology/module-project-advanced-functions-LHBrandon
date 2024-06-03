@@ -28,7 +28,7 @@
     // processSingleLearner({ name: "Elisabeth", lovesJS: 1 }) // should return { name: "Elisabeth", lovesJS: true }
     // processSingleLearner({ name: "Pete", age: 23, lovesJS: 0 }) // should return { name: "Pete", age: 23, lovesJS: false }
     const processSingleLearner = (learner) => {
-      if (learner.lovesJS === 1){
+      if (learner.lovesJS === 1) {
         learner.lovesJS = true
       } else if (learner.lovesJS === 0) {
         learner.lovesJS = false
@@ -49,7 +49,7 @@
     const processLearnersLoop = (learners) => {
       for (let i in learners) {
         let singleLearner = learners[i]
-      processSingleLearner(singleLearner)
+        processSingleLearner(singleLearner)
       }
       return learners
     }
@@ -60,8 +60,9 @@
     // ❗ Notes:
     // 🧠 Solve this challenge using the forEach method of the learners array.
     // 🧠 Use arrow functions whenever possible.
-    const processLearnerForEach = () => {
-
+    const processLearnerForEach = (learners) => {
+      learners.forEach(learner => processLearnersLoop(learners))
+      return learners 
     }
 
     // 👉 CHALLENGE 4
