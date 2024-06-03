@@ -27,8 +27,13 @@
     // 🧠 Examples of usage:
     // processSingleLearner({ name: "Elisabeth", lovesJS: 1 }) // should return { name: "Elisabeth", lovesJS: true }
     // processSingleLearner({ name: "Pete", age: 23, lovesJS: 0 }) // should return { name: "Pete", age: 23, lovesJS: false }
-    const processSingleLearner = () => {
-
+    const processSingleLearner = (learner) => {
+      if (learner.lovesJS === 1){
+        learner.lovesJS = true
+      } else if (learner.lovesJS === 0) {
+        learner.lovesJS = false
+      }
+      return learner
     }
 
     // 👉 CHALLENGE 2
@@ -41,8 +46,12 @@
     // ❗ Notes:
     // 🧠 There are many approaches to this problem: using a loop, using forEach, using map...
     // 🧠 Solve this challenge using a for/in loop or a for loop.
-    const processLearnersLoop = () => {
-
+    const processLearnersLoop = (learners) => {
+      for (let i in learners) {
+        let singleLearner = learners[i]
+      processSingleLearner(singleLearner)
+      }
+      return learners
     }
 
     // 👉 CHALLENGE 3
